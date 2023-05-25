@@ -29,6 +29,7 @@ if("added".equals(msg))
 if("exist".equals(msg))
 {
 %>
+<h3 class="alert">Product already exist in your cart!</h3>
 <%} %>
 <%
 

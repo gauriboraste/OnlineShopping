@@ -17,7 +17,7 @@ try{
 		product_price=rs.getInt(4);
 		product_total=product_price;
 	}
-	ResultSet rs1=st.executeQuery("select *from cart where product_id='"+product_id+"' and email='"+email+"'  and address value is NULL");
+	ResultSet rs1=st.executeQuery("select *from cart where product_id='"+product_id+"' and email='"+email+"'  and address is NULL");
 	while(rs1.next())
 	{
 		cart_total=rs1.getInt(5);
@@ -29,7 +29,7 @@ try{
 	}
 	if(z==1)
 	{
-		st.executeUpdate("update cart set total='"+cart_total+"',quantity='"+quantity+"' where product_id="+product_id+" and email='"+email+"' and address is NULL");
+		st.executeUpdate("update cart set total='"+cart_total+"',quantity='"+quantity+"' where product_id='"+product_id+"' and email='"+email+"' and address is NULL");
 	response.sendRedirect("home.jsp?msg=exist");
 	}
 	if(z==0)
