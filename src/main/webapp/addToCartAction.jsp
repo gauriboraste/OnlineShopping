@@ -29,12 +29,12 @@ try{
 	}
 	if(z==1)
 	{
-		st.executeUpdate("update cart set total='"+cart_total+"',quantity='"+quantity+"' where product_id="+product_id+" and email='"+email+"' and address iss NULL");
+		st.executeUpdate("update cart set total='"+cart_total+"',quantity='"+quantity+"' where product_id="+product_id+" and email='"+email+"' and address is NULL");
 	response.sendRedirect("home.jsp?msg=exist");
 	}
 	if(z==0)
 	{
-		PreparedStatement ps=con.prepareStatement("insert into cart(email,product_id,quantity,ptice,total) values(?,?,?,?,?)");
+		PreparedStatement ps=con.prepareStatement("insert into cart(email,product_id,quantity,price,total) values(?,?,?,?,?)");
 	ps.setString(1, email);
 	ps.setString(2, product_id);
 	ps.setInt(3, quantity);
