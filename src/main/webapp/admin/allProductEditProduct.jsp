@@ -1,7 +1,7 @@
 <%@page import="project.ConnectionProvider"%>
 <%@page import="java.sql.*"%>
 <%@include file="adminHeader.jsp"%>
-<%@include file="..//footer.jsp"%>
+<%@include file="../footer.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -51,10 +51,9 @@ if("wrong".equals(msg))
     	   {
   	    %>
           <tr>
-            <td> <%=rs.getString(1) %> </td>
-             <td> <%=rs.getString(2) %> </td>
-              <td> <%=rs.getString(3) %> </td>
-             
+            <td><%=rs.getString(1) %> </td>
+             <td><%=rs.getString(2) %> </td>
+              <td><%=rs.getString(3) %> </td> 
             <td><i class="fa fa-inr"></i> <%=rs.getString(4) %> </td>
            <td> <%=rs.getString(5) %> </td>
             <td><a href="editProduct.jsp?id=<%=rs.getString(1) %>">Edit <i class='fas fa-pen-fancy'></i></a></td>
@@ -63,8 +62,7 @@ if("wrong".equals(msg))
     	   }
        } 
          catch(Exception e){
-        	 System.out.println(e);
-        	 
+        	 System.out.println(e); 
          }
          %>
         </tbody>

@@ -1,7 +1,7 @@
 <%@page import="project.ConnectionProvider"%>
 <%@page import="java.sql.*"%>
 <%@include file="adminHeader.jsp"%>
-<%@include file="..//footer.jsp"%>
+<%@include file="../footer.jsp"%>
 <html>
 <head>
 <link rel="stylesheet" href="../css/addNewProduct-style.css">
@@ -10,12 +10,14 @@
 <body>
 <%
 String msg=request.getParameter("msg");
-if("done".equals(msg)){
+if("done".equals(msg))
+{
 %>
 <h3 class="alert">Product Added Successfully!</h3>
 <%} %>
 <%
-if("wrong".equals(msg)){
+if("wrong".equals(msg))
+{
 %>
 <h3 class="alert">Some thing went wrong! Try Again!</h3>
 <%} %>
@@ -32,19 +34,14 @@ id=id+1;
 }
 }
 catch(Exception e)
-{
-	
-}
+{}
 %>
-
-
 <form action="addNewProductAction.jsp" method="post">
-
 <h3 style="color: yellow;">Product ID: <%out.println(id); %></h3>
 <input type="hidden" name="id" value="<%out.println(id); %>">
 <div class="left-div">
  <h3>Enter Name</h3>
- <input class="input.style" type="text" name="name" placeholder="Enter name" required>
+ <input class="input.style" type="text" name="name" placeholder="Enter Name" required>
  
 <hr>
 </div>
@@ -54,13 +51,11 @@ catch(Exception e)
 <input class="input.style" type="text" name="category" placeholder="Enter Category" required> 
 <hr>
 </div>
-
 <div class="left-div">
 <h3>Enter Price</h3>
  <input class="input.style" type="number" name="price" placeholder="Enter Price" required>
 <hr>
 </div>
-
 <div class="right-div">
 <h3>Active</h3>
   <select class="input-style" name="active">
